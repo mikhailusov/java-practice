@@ -5,13 +5,29 @@ public class ReverseLinkedList {
         ListNode two = new ListNode(2, three);
         ListNode head = new ListNode(1, two);
 
-        reverseListNode(head);
+//        printLinkedList(head);
 
-        System.out.println(head);
+        ListNode rev = reverseListNode(head);
+
+        printLinkedList(rev);
     }
 
     public static ListNode reverseListNode(ListNode head) {
-        return head;
+        ListNode prev = null;
+        while(head != null) {
+            ListNode next = head.next;
+           head.next = prev;
+           prev = head;
+           head = next;
+        }
+        return prev;
+    }
+
+    public static void printLinkedList(ListNode head) {
+        while(head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
     }
 
     private static class ListNode {
