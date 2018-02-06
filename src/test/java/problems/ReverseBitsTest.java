@@ -17,7 +17,7 @@ class ReverseBitsTest {
     @Test
     public void testReverse() {
         assertEquals(0, reverseBits.reverse(0));
-        assertEquals(Integer.MAX_VALUE, reverseBits.reverse(1));
+        assertEquals(-2147483648, reverseBits.reverse(1));
         assertEquals(964176192, reverseBits.reverse(43261596));
     }
 
