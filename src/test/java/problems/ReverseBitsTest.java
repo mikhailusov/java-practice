@@ -1,24 +1,15 @@
 package problems;
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-class ReverseBitsTest {
-
-    private ReverseBits reverseBits;
-
-    @BeforeEach
-    void setUp() {
-        this.reverseBits = new ReverseBits();
-    }
+public class ReverseBitsTest {
 
     @Test
     public void testReverse() {
-        assertEquals(0, reverseBits.reverse(0));
-        assertEquals(-2147483648, reverseBits.reverse(1));
-        assertEquals(964176192, reverseBits.reverse(43261596));
+        assertEquals(0, ReverseBits.reverse(0));
+        assertEquals(-2147483648, ReverseBits.reverse(1));
+        assertEquals(964176192, ReverseBits.reverse(43261596));
     }
 
 }
