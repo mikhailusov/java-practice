@@ -1,3 +1,5 @@
+package datastructures;
+
 import java.util.AbstractSequentialList;
 import java.util.List;
 import java.util.ListIterator;
@@ -34,7 +36,7 @@ public class MyLinkedList<E> extends AbstractSequentialList<E> implements List<E
 
         ListNode currentNode = this.head.next;
 
-        while(currentNode.next.next != null) {
+        while(currentNode.next != null) {
             if (currentNode.element.equals(o)) {
                 return true;
             }
@@ -60,6 +62,8 @@ public class MyLinkedList<E> extends AbstractSequentialList<E> implements List<E
 
         this.tail = newTail;
 
+        this.size++;
+
         return true;
     }
 
@@ -77,7 +81,7 @@ public class MyLinkedList<E> extends AbstractSequentialList<E> implements List<E
 
         ListNode currentNode = this.head.next;
 
-        while (currentNode.next.next != null) {
+        while (currentNode.next != null) {
             if (currentNode.element.equals(o)) {
 
                 currentNode.prev.next = currentNode.next;
@@ -108,7 +112,7 @@ public class MyLinkedList<E> extends AbstractSequentialList<E> implements List<E
 
         ListNode currentNode = this.head.next;
 
-        for (int i = 0; currentNode.next.next != null; i++) {
+        for (int i = 0; currentNode.next != null; i++) {
             if (i == index) {
                 return currentNode.element;
             }
