@@ -1,4 +1,4 @@
-package problems;
+package problems.bitwise;
 
 public class ReverseBits {
 
