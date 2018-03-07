@@ -1,4 +1,4 @@
-package algoritms.other;
+package problems.other;
 
 import org.junit.Test;
 import static junit.framework.TestCase.assertTrue;

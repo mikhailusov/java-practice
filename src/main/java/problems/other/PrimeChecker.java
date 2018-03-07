@@ -1,4 +1,4 @@
-package algoritms.other;
+package problems.other;
 
 public class PrimeChecker {
 
