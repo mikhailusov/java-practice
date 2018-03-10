@@ -18,7 +18,7 @@ public class ArrayIndexAndElementEquality {
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (arr[mid] == mid && (min < 0 || min > mid)) {
+            if (arr[mid] == mid) {
                 min = mid;
                 high = mid - 1;
                 continue;
