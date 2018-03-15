@@ -32,16 +32,46 @@ public class SpiralArray2D {
 
     public static int[][] spiral(int n) {
         if (n < 1) {
-            return new int[0][];
+            return new int[0][0];
         }
 
         int[][] matrix = new int[n][n];
 
-        int i = 0;
-        int j = 0;
         int num = 1;
+        int it = 0;
 
         while (num <= n * n) {
+
+            int i = 0 + it;
+            int j = 0 + it;
+
+            while (j < n - it) {
+                matrix[i][j++] = num++;
+            }
+
+            j--;
+            i++;
+
+            while (i < n - it) {
+                matrix[i++][j] = num++;
+            }
+
+            i--;
+            j--;
+
+            while (j >= it) {
+                matrix[i][j--] = num++;
+            }
+
+            j++;
+            i--;
+
+            it++;
+
+            while (i >= it) {
+                matrix[i--][j] = num++;
+            }
+
 
         }
 
@@ -58,6 +88,6 @@ public class SpiralArray2D {
     }
 
     public static void main(String[] args) {
-        printMatrix(spiral(3));
+        printMatrix(spiral(4));
     }
 }
