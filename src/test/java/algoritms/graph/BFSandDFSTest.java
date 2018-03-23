@@ -4,7 +4,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
-public class BreadthFirstSearchTest {
+public class BFSandDFSTest {
 
     @Test
     public void hasPath() {
@@ -25,5 +25,10 @@ public class BreadthFirstSearchTest {
         assertTrue(BreadthFirstSearch.hasPath(node, node5));
         assertFalse(BreadthFirstSearch.hasPath(node, node4));
         assertFalse(BreadthFirstSearch.hasPath(node1, node));
+
+        assertTrue(DepthFirstSearch.hasPath(node, node6));
+        assertTrue(DepthFirstSearch.hasPath(node, node5));
+        assertFalse(DepthFirstSearch.hasPath(node, node4));
+        assertFalse(DepthFirstSearch.hasPath(node1, node));
     }
 }
