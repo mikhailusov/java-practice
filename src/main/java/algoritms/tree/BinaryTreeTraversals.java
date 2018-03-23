@@ -1,6 +1,8 @@
 package algoritms.tree;
 
 import problems.trees.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTreeTraversals {
@@ -109,6 +111,26 @@ public class BinaryTreeTraversals {
         }
     }
 
+    public static void levelOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            print(node);
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         // pre-orders
         preOrderRecursive(generateTree());
@@ -131,7 +153,11 @@ public class BinaryTreeTraversals {
         System.out.println();
         postOrderIterative(generateTree());
 
+        System.out.println();
+        System.out.println();
 
+        // level-order
+        levelOrder(generateTree());
     }
 
     /**
